@@ -1,4 +1,3 @@
-// 模擬文章資料（可手動更新或未來連動後端）
 const postsData = [
   {
     id: 2,
@@ -16,7 +15,6 @@ const postsData = [
   }
 ];
 
-// 渲染文章
 function renderPosts() {
   const postsContainer = document.getElementById('posts');
   postsContainer.innerHTML = '';
@@ -28,7 +26,7 @@ function renderPosts() {
       ${post.image ? `<img src="${post.image}" alt="Post image">` : ''}
       ${post.youtube ? `
         <div class="post-video">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/${post.youtube}" 
+          <iframe src="https://www.youtube.com/embed/${post.youtube}" 
                   frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                   allowfullscreen></iframe>
         </div>
@@ -40,7 +38,6 @@ function renderPosts() {
   });
 }
 
-// 取得訪客 IP 並顯示為留言匿名名稱
 async function setAnonymousName() {
   try {
     const response = await fetch('https://api.ipify.org?format=json');
