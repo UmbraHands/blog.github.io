@@ -28,24 +28,25 @@ body {
   right: 0;
 }
 
-/* 主要內容區域，置中顯示 */
+/* 主要內容區域，貼合側欄 */
 .main-content {
-  margin: 0 auto; /* 置中 */
-  width: calc(100% - 600px); /* 減去左右側欄的總寬度（300px * 2） */
-  margin-top: 100px;
-  max-width: 800px; /* 控制最大寬度，避免過寬 */
-  min-width: 400px; /* 避免過窄 */
-  height: 100vh; /* 滿螢幕高度 */
-  overflow: hidden; /* 防止溢出 */
-  position: relative;
+  margin-left: 300px; /* 貼合左側欄 */
+  margin-right: 300px; /* 貼合右側欄 */
+  margin-top: 100px; /* 確保從橫幅下方開始 */
+  height: calc(100vh - 100px); /* 與橫幅高度匹配 */
+  overflow-y: auto; /* 允許貼文區域滑動 */
+  overflow-x: hidden; /* 防止水平溢出 */
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #ffffff; /* 可視化背景 */
 }
 
 /* 固定橫幅區域 */
 .info-section {
   height: 100px; /* 橫幅高度，可調整 */
   width: calc(100% - 600px); /* 與主內容寬度一致 */
-  max-width: 800px; /* 與主內容一致 */
-  margin: 0 auto; /* 置中 */
+  margin-left: 300px; /* 貼合左側欄 */
+  margin-right: 300px; /* 貼合右側欄 */
   padding: 10px;
   background-color: #e0e0e0;
   text-align: center;
@@ -56,8 +57,8 @@ body {
 
 /* 貼文容器 */
 .posts-container {
-  margin-top: 100px; /* 與橫幅高度一致 */
-  height: calc(100vh - 100px); /* 剩餘高度 */
+  margin-top: 0; /* 移除多餘的 margin-top，因為已在 .main-content 中設置 */
+  height: 100%; /* 填滿 .main-content 高度 */
   width: 100%; /* 填滿主內容寬度 */
   padding: 20px;
   overflow-y: auto; /* 貼文內部可上下滑動 */
@@ -77,6 +78,6 @@ body {
 /* 響應式設計 */
 @media (max-width: 1000px) {
   .sidebar { display: none; } /* 窄螢幕隱藏側欄 */
-  .main-content { width: 100%; } /* 主內容滿寬 */
+  .main-content { margin: 100px 0 0; width: 100%; } /* 主內容滿寬 */
   .info-section { width: 100%; margin: 0; } /* 橫幅滿寬 */
 }
