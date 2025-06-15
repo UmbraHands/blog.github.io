@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  overflow-x: hidden;
+  overflow-x: hidden; /* 防止水平滾動 */
 }
 
 /* 側邊欄樣式（固定位置） */
@@ -28,30 +28,32 @@ body {
 /* 主要內容區域 */
 .main-content {
   margin: 0 200px; /* 留出側邊欄空間 */
-  overflow-y: hidden; /* 防止主區域滑動 */
+  overflow-y: auto; /* 僅中間內容可上下滑動 */
+  height: 100vh; /* 滿高度 */
 }
 
-/* 固定資訊/圖片區域 */
-.info-section {
-  height: 150px; /* 固定高度，可自行調整 */
-  background-color: #e0e0e0;
-  padding: 20px;
+/* 標頭樣式 */
+header {
   text-align: center;
-  position: sticky;
-  top: 0;
-  z-index: 1;
+  padding: 20px 0;
+  background-color: #333;
+  color: white;
 }
 
-/* 滑動貼文容器 */
-.posts-container {
-  height: calc(100vh - 150px); /* 減去資訊區域高度 */
-  overflow-y: auto; /* 僅貼文區域滑動 */
-  padding: 20px;
+/* 橫幅樣式 */
+.banner {
+  height: 100px; /* 固定高度，可調整 */
+  background-color: #e0e0e0;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
+/* 貼文容器 */
 .container {
   max-width: 800px;
   margin: 0 auto;
+  padding: 20px;
 }
 
 .post {
@@ -94,21 +96,16 @@ body {
 /* 響應式設計 */
 @media (max-width: 1000px) {
   .sidebar {
-    display: none;
+    display: none; /* 螢幕窄時隱藏側邊欄 */
   }
   .main-content {
     margin: 0;
   }
-  .info-section {
-    height: 100px;
-  }
-  .posts-container {
-    height: calc(100vh - 100px);
-  }
 }
 
 @media (max-width: 600px) {
-  .posts-container { padding: 10px; }
+  .container { padding: 10px; }
   .post { padding: 10px; }
   .post-video iframe { height: 200px; }
+  .banner { height: 80px; }
 }
