@@ -30,8 +30,8 @@ body {
 
 /* 主要內容區域，貼合側欄 */
  .main-content {
-  margin-left: 295px; /* 貼合左側欄 */
-  margin-right: 295px; /* 貼合右側欄 */
+  margin-left: 300px; /* 貼合左側欄 */
+  margin-right: 300px; /* 貼合右側欄 */
   margin-top: 100px; /* 確保從橫幅下方開始 */
   height: calc(100vh - 100px); /* 與橫幅高度匹配 */
   overflow-y: auto; /* 允許貼文區域滑動 */
@@ -43,11 +43,11 @@ body {
 
 /* 固定橫幅區域 */
  .info-section {
-  height: 100px; /* 橫幅高度，可調整 */
+  height: 150px; /* 橫幅高度，可調整 */
   width: calc(100% - 600px); /* 與主內容寬度一致 */
-  margin-left: 300px; /* 貼合左側欄 */
-  margin-right: 300px; /* 貼合右側欄 */
-  padding: 10px;
+  margin-left: 295px; /* 貼合左側欄 */
+  margin-right: 295px; /* 貼合右側欄 */
+  padding: 0px;
   background-color: #e0e0e0;
   text-align: center;
   position: fixed; /* 固定不動 */
