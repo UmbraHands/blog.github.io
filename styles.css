@@ -30,7 +30,7 @@ body {
 
 /* 主要內容區域，壓縮邊距讓中間區域變窄 */
 .main-content {
-  margin: 0 250px; /* 與側邊欄寬度一致，原本 150px 增加到 250px */
+  margin: 0 160px; /* 與側邊欄寬度一致，原本 150px 增加到 250px */
   overflow-y: hidden;
   max-width: 600px; /* 新增：限制主內容最大寬度，壓縮中間空間 */
 }
