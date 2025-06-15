@@ -1,219 +1,81 @@
-/* 基本樣式，控制整個頁面佈局 */
+/* 基本樣式，控制整體頁面 */
 body {
-  margin: 0; /* 外邊距，預設為 0 */
-  padding: 0; /* 內邊距，預設為 0 */
-  font-family: Arial, sans-serif; /* 字體家族，可設為 "Times New Roman", "Helvetica" */
-  font-size: 16px; /* 字體大小，可設為 12px, 14px */
-  font-weight: normal; /* 字體粗細，可設為 bold, 100-900 */
-  font-style: normal; /* 字體風格，可設為 italic */
-  line-height: 1.5; /* 行高，可設為 1.2, 2 */
-  color: #000000; /* 文字顏色，可設為 #FFFFFF, rgb(255, 255, 255) */
-  background-color: #FFFFFF; /* 背景顏色，可設為 #F0F0F0, transparent */
-  background-image: none; /* 背景圖片，可設為 url('image.jpg') */
-  background-repeat: repeat; /* 背景重複，可設為 no-repeat, repeat-x */
-  background-position: center; /* 背景位置，可設為 top, 50% 50% */
-  background-size: auto; /* 背景尺寸，可設為 cover, contain */
-  background-attachment: scroll; /* 背景附著，可設為 fixed */
-  overflow-x: hidden; /* 水平溢出處理，保持 hidden */
-  overflow-y: hidden; /* 垂直溢出處理，移除上下滑動，原本為 auto */
-  text-align: left; /* 文字對齊，可設為 center, right */
-  direction: ltr; /* 文字方向，可設為 rtl */
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  overflow-y: hidden; /* 移除整體上下滑動 */
+  overflow-x: hidden; /* 確保無水平滑動 */
 }
 
-/* 側邊欄樣式（固定位置，寬度為 300px，空間固定不動） */
+/* 側邊欄樣式，固定位置 */
 .sidebar {
-  position: fixed; /* 固定位置，可設為 absolute, relative */
-  top: 0; /* 距離頂部距離，可設為 10px, 20% */
-  right: auto; /* 距離右側距離，預設 auto */
-  bottom: auto; /* 距離底部距離，預設 auto */
-  left: auto; /* 距離左側距離，預設 auto */
-  height: 100vh; /* 高度，滿螢幕，可設為 500px, 80% */
-  width: 300px; /* 寬度，固定為 300px，保持不動 */
-  min-width: 0; /* 最小寬度，可設為 100px */
-  max-width: none; /* 最大寬度，可設為 400px */
-  padding: 20px; /* 內邊距，可設為 10px 10px 10px 10px */
-  margin: 0; /* 外邊距，可設為 0 10px */
-  border: none; /* 邊框，可設為 1px solid #000000 */
-  border-radius: 0; /* 邊框圓角，可設為 5px */
-  border-top: none; /* 頂部邊框，可設為 1px dashed #000000 */
-  border-right: none; /* 右側邊框 */
-  border-bottom: none; /* 底部邊框 */
-  border-left: none; /* 左側邊框 */
-  background-color: #f0f0f0; /* 背景顏色，可設為 #E0E0E0 */
-  background-image: none; /* 背景圖片，可設為 url('sidebar-bg.jpg') */
-  box-shadow: none; /* 陰影效果，可設為 0 2px 5px rgba(0, 0, 0, 0.1) */
-  box-sizing: border-box; /* 盒模型，可設為 content-box */
-  z-index: 0; /* 堆疊順序，可設為 1000 */
-  opacity: 1; /* 透明度，可設為 0.8 */
-  visibility: visible; /* 可見性，可設為 hidden */
-  display: block; /* 顯示方式，可設為 flex, inline */
-  transition: width 0.3s; /* 過渡效果，可設為 all 0.5s ease */
-  overflow: hidden; /* 溢出處理，可設為 auto, scroll */
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 300px; /* 側欄寬度固定為 300px */
+  padding: 20px;
+  background-color: #f0f0f0;
+  box-sizing: border-box;
 }
 
 /* 左側欄 */
 .left-sidebar {
-  left: 0; /* 固定左側位置，保持不動 */
-  right: auto; /* 確保不影響右側 */
+  left: 0;
 }
 
 /* 右側欄 */
 .right-sidebar {
-  right: 0; /* 固定右側位置，保持不動 */
-  left: auto; /* 確保不影響左側 */
+  right: 0;
 }
 
-/* 主要內容區域，調整邊距貼近左右側欄 */
+/* 主要內容區域，置中顯示 */
 .main-content {
-  margin: 0 300px; /* 與側邊欄寬度一致，保持 300px 貼近側欄 */
-  padding: 0; /* 內邊距，可設為 10px */
-  border: none; /* 邊框，可設為 1px solid #000000 */
-  border-radius: 0; /* 圓角，可設為 5px */
-  background-color: transparent; /* 背景顏色，可設為 #FFFFFF */
-  overflow-y: auto; /* 垂直溢出，貼文區域可滑動，原本為 hidden */
-  max-width: 0; /* 移除最大寬度限制，貼近側欄 */
-  min-width: 0; /* 最小寬度，可設為 300px */
-  height: auto; /* 高度，可設為 100vh */
-  position: relative; /* 定位，可設為 absolute */
-  z-index: 0; /* 堆疊順序，可設為 10 */
+  margin: 0 auto; /* 置中 */
+  width: calc(100% - 600px); /* 減去左右側欄的總寬度（300px * 2） */
+  max-width: 800px; /* 控制最大寬度，避免過寬 */
+  min-width: 400px; /* 避免過窄 */
+  height: 100vh; /* 滿螢幕高度 */
+  overflow: hidden; /* 防止溢出 */
+  position: relative;
 }
 
-/* 固定資訊/圖片區域，減少高度並向上移動 */
+/* 固定橫幅區域 */
 .info-section {
-  height: 150px; /* 減少高度至 150px，原本 300px，減少占用空間 */
-  width: 100%; /* 寬度，可設為 80% */
-  padding: 10px; /* 內邊距，減少至 10px */
-  margin: 0; /* 外邊距，可設為 0 10px */
-  border: none; /* 邊框，可設為 1px dashed #000000 */
-  border-radius: 0; /* 圓角，可設為 5px */
-  background-color: #e0e0e0; /* 背景顏色，可設為 #D0D0D0 */
-  background-image: none; /* 背景圖片，可設為 url('banner-bg.jpg') */
-  background-repeat: repeat; /* 背景重複，可設為 no-repeat */
-  background-position: center; /* 背景位置，可設為 top */
-  background-size: auto; /* 背景尺寸，可設為 cover */
-  text-align: center; /* 文字對齊，可設為 left, right */
-  position: sticky; /* 定位，可設為 fixed */
-  top: 0; /* 距離頂部，保持 0 */
-  z-index: 1; /* 堆疊順序，可設為 100 */
-  box-shadow: none; /* 陰影，可設為 0 2px 5px rgba(0, 0, 0, 0.1) */
-  overflow: hidden; /* 溢出處理，可設為 auto */
-}
-
-/* 滑動貼文容器，調整高度與新資訊區域匹配 */
-.posts-container {
-  height: calc(100vh - 150px); /* 與 info-section 新高度匹配，原本 300px 改為 150px */
-  width: 100%; /* 寬度，可設為 90% */
-  padding: 20px; /* 內邊距，可設為 10px 10px 10px 10px */
-  margin: 0; /* 外邊距，可設為 0 10px */
-  border: none; /* 邊框，可設為 1px solid #000000 */
-  background-color: transparent; /* 背景顏色，可設為 #F0F0F0 */
-  overflow-y: auto; /* 垂直滑動，可設為 hidden */
-  overflow-x: hidden; /* 水平溢出，可設為 auto */
-  box-sizing: border-box; /* 盒模型，可設為 content-box */
+  height: 100px; /* 橫幅高度，可調整 */
+  width: calc(100% - 600px); /* 與主內容寬度一致 */
+  max-width: 800px; /* 與主內容一致 */
+  margin: 0 auto; /* 置中 */
+  padding: 10px;
+  background-color: #e0e0e0;
+  text-align: center;
+  position: fixed; /* 固定不動 */
+  top: 0;
+  z-index: 1; /* 確保在內容之上 */
 }
 
 /* 貼文容器 */
-.container {
-  max-width: 100%; /* 最大寬度，可設為 800px */
-  min-width: 0; /* 最小寬度，可設為 300px */
-  width: auto; /* 寬度，可設為 90% */
-  margin: 0 auto; /* 外邊距，可設為 0 10px */
-  padding: 0; /* 內邊距，可設為 10px */
-  border: none; /* 邊框，可設為 1px dashed #000000 */
-  border-radius: 0; /* 圓角，可設為 5px */
-  background-color: transparent; /* 背景顏色，可設為 #FFFFFF */
-  text-align: left; /* 文字對齊，可設為 center */
+.posts-container {
+  margin-top: 100px; /* 與橫幅高度一致 */
+  height: calc(100vh - 100px); /* 剩餘高度 */
+  width: 100%; /* 填滿主內容寬度 */
+  padding: 20px;
+  overflow-y: auto; /* 貼文內部可上下滑動 */
+  overflow-x: hidden; /* 移除左右滑動 */
+  box-sizing: border-box;
 }
 
 /* 貼文樣式 */
 .post {
-  background: white; /* 背景顏色，可設為 #F0F0F0 */
-  padding: 15px; /* 內邊距，可設為 10px 10px 10px 10px */
-  margin-bottom: 15px; /* 外邊距底部，可設為 10px */
-  margin-top: 0; /* 外邊距頂部，可設為 5px */
-  margin-left: 0; /* 外邊距左側，可設為 10px */
-  margin-right: 0; /* 外邊距右側，可設為 10px */
-  border: none; /* 邊框，可設為 1px solid #000000 */
-  border-radius: 5px; /* 圓角，可設為 0 */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 陰影，可設為 none */
-  display: block; /* 顯示方式，可設為 flex */
-  opacity: 1; /* 透明度，可設為 0.9 */
-}
-
-/* 貼文內容 */
-.post-content {
-  margin-bottom: 10px; /* 外邊距底部，可設為 5px */
-  margin-top: 0; /* 外邊距頂部，可設為 5px */
-  font-size: 16px; /* 字體大小，可設為 14px */
-  color: #000000; /* 文字顏色，可設為 #333333 */
-}
-
-/* 圖片樣式 */
-.post img {
-  max-width: 100%; /* 最大寬度，可設為 80% */
-  min-width: 0; /* 最小寬度，可設為 100px */
-  height: auto; /* 高度，可設為 200px */
-  width: auto; /* 寬度，可設為 100% */
-  border-radius: 5px; /* 圓角，可設為 0 */
-  margin-top: 10px; /* 外邊距頂部，可設為 5px */
-  margin-bottom: 0; /* 外邊距底部，可設為 5px */
-  border: none; /* 邊框，可設為 1px solid #000000 */
-  object-fit: cover; /* 圖片適配，可設為 contain */
-}
-
-/* 影片樣式，保持 16:9 居中 */
-.post-video {
-  margin-top: 10px; /* 外邊距頂部，可設為 5px */
-  position: relative; /* 定位，可設為 absolute */
-  width: 100%; /* 寬度，可設為 90% */
-  height: 0; /* 高度，預設 0 */
-  padding-bottom: 56.25%; /* 16:9 比例，可設為 75% */
-  overflow: hidden; /* 溢出處理，可設為 auto */
-}
-
-.post-video iframe {
-  position: absolute; /* 定位，可設為 relative */
-  top: 0; /* 距離頂部，可設為 5px */
-  left: 0; /* 距離左側，可設為 5px */
-  width: 100%; /* 寬度，可設為 90% */
-  height: 100%; /* 高度，可設為 90% */
-  border: none; /* 邊框，可設為 1px solid #000000 */
-  frameborder: 0; /* 框架邊框，可設為 1 */
-  allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"; /* 允許功能，可自訂 */
-}
-
-/* 日期樣式 */
-.post-date {
-  font-size: 0.9em; /* 字體大小，可設為 12px */
-  color: #666666; /* 文字顏色，可設為 #000000 */
-  margin-top: 5px; /* 外邊距頂部，可設為 0 */
-}
-
-/* 留言系統樣式 */
-.giscus {
-  margin-top: 20px; /* 外邊距頂部，可設為 10px */
-  margin-bottom: 0; /* 外邊距底部，可設為 10px */
+  background: white;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* 響應式設計 */
 @media (max-width: 1000px) {
-  .sidebar {
-    display: none; /* 顯示方式，可設為 block */
-  }
-  .main-content {
-    margin: 0; /* 外邊距，可設為 0 10px */
-    max-width: 100%; /* 最大寬度，可設為 800px */
-  }
-  .info-section {
-    height: 100px; /* 高度，進一步減少，可設為 200px */
-  }
-  .posts-container {
-    height: calc(100vh - 100px); /* 高度，與 info-section 新高度匹配 */
-  }
-}
-
-@media (max-width: 600px) {
-  .posts-container { padding: 10px; } /* 內邊距，可設為 5px */
-  .post { padding: 10px; } /* 內邊距，可設為 5px */
-  .post-video { padding-bottom: 75%; } /* 影片比例，可設為 56.25% */
+  .sidebar { display: none; } /* 窄螢幕隱藏側欄 */
+  .main-content { width: 100%; } /* 主內容滿寬 */
+  .info-section { width: 100%; margin: 0; } /* 橫幅滿寬 */
 }
