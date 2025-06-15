@@ -48,7 +48,7 @@ body {
   margin-left: 300px; /* 貼合左側欄 */
   margin-right: 300px; /* 貼合右側欄 */
   margin: 0 auto; /* 自動置中 */
-  padding: 0px;
+  padding: 20px;
   background-color: #e0e0e0;
   text-align: center;
   position: fixed; /* 固定不動 */
