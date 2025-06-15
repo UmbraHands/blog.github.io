@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的部落格</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>我的部落格</h1>
+    <div id="posts"></div>
+  </div>
+  <!-- Giscus 留言系統 -->
+  <script src="https://giscus.app/client.js"
+    data-repo="[你的GitHub用戶名]/[你的留言Repo名]"
+    data-repo-id="[你的Repo ID]"
+    data-category="Comments"
+    data-category-id="[你的Category ID]"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="zh-TW"
+    crossorigin="anonymous"
+    async>
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
