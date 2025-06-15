@@ -34,7 +34,7 @@ body {
   width: calc(100% - 600px); /* 減去左右側欄的總寬度（300px * 2） */
   max-width: 800px; /* 控制最大寬度，避免過寬 */
   min-width: 400px; /* 避免過窄 */
-  height: 100vh; /* 滿螢幕高度 */
+  height: 100px; /* 滿螢幕高度 */
   overflow: hidden; /* 防止溢出 */
   position: relative;
 }
