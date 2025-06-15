@@ -44,15 +44,17 @@ body {
 /* 固定橫幅區域 */
  .info-section {
   height: 150px; /* 橫幅高度，可調整 */
-  width: calc(100% - 610px); /* 與主內容寬度一致 */
-  margin-left: 200px; /* 貼合左側欄 */
-  margin-right: 200px; /* 貼合右側欄 */
+  width: calc(100% - 600px); /* 與主內容寬度一致 */
+  margin-left: 300px; /* 貼合左側欄 */
+  margin-right: 300px; /* 貼合右側欄 */
+  margin: 0 auto; /* 自動置中 */
   padding: 0px;
   background-color: #e0e0e0;
   text-align: center;
   position: fixed; /* 固定不動 */
   top: 0;
   z-index: 1; /* 確保在內容之上 */
+  box-sizing: border-box; /* 確保 padding 不影響寬度 */
 } 
 
 /* 貼文容器 */
