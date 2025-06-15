@@ -30,13 +30,13 @@ body {
 
 /* 主要內容區域，貼合側欄 */
  .main-content {
-  margin-left: 300px; /* 貼合左側欄 */
-  margin-right: 300px; /* 貼合右側欄 */
+  margin-left: 295px; /* 貼合左側欄 */
+  margin-right: 295px; /* 貼合右側欄 */
   margin-top: 100px; /* 確保從橫幅下方開始 */
   height: calc(100vh - 100px); /* 與橫幅高度匹配 */
   overflow-y: auto; /* 允許貼文區域滑動 */
   overflow-x: hidden; /* 防止水平溢出 */
-  padding: 20px;
+  padding: 0px;
   box-sizing: border-box;
   background-color: #ffffff; /* 可視化背景 */
 } 
