@@ -2,14 +2,16 @@
 const postsData = [
   {
     id: 2,
-    content: "這是我的第二篇文章！",
+    content: "這是我的第二篇文章！包含一首歌：",
     image: "https://via.placeholder.com/600x300",
+    youtube: "dQw4w9WgXcQ", // YouTube 影片 ID
     date: "2025-06-15"
   },
   {
     id: 1,
     content: "這是我的第一篇文章，歡迎留言！",
     image: "https://via.placeholder.com/600x300",
+    youtube: "n1b9V5vQ8lQ", // 另一個 YouTube 影片 ID
     date: "2025-06-14"
   }
 ];
@@ -24,6 +26,13 @@ function renderPosts() {
     postElement.innerHTML = `
       <div class="post-content">${post.content}</div>
       ${post.image ? `<img src="${post.image}" alt="Post image">` : ''}
+      ${post.youtube ? `
+        <div class="post-video">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/${post.youtube}" 
+                  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen></iframe>
+        </div>
+      ` : ''}
       <div class="post-date">${post.date}</div>
       <div class="giscus" data-giscus-post-id="${post.id}"></div>
     `;
