@@ -29,7 +29,7 @@ body {
 }
 
 /* 主要內容區域，貼合側欄 */
-/* .main-content {
+ .main-content {
   margin-left: 300px; /* 貼合左側欄 */
   margin-right: 300px; /* 貼合右側欄 */
   margin-top: 100px; /* 確保從橫幅下方開始 */
@@ -39,10 +39,10 @@ body {
   padding: 20px;
   box-sizing: border-box;
   background-color: #ffffff; /* 可視化背景 */
-} */
+} 
 
 /* 固定橫幅區域 */
-/* .info-section {
+ .info-section {
   height: 100px; /* 橫幅高度，可調整 */
   width: calc(100% - 600px); /* 與主內容寬度一致 */
   margin-left: 300px; /* 貼合左側欄 */
@@ -53,35 +53,7 @@ body {
   position: fixed; /* 固定不動 */
   top: 0;
   z-index: 1; /* 確保在內容之上 */
-} */
-/* 固定橫幅區域 */
-.info-section {
-  height: 100px; /* 橫幅高度，與 .main-content 的 margin-top 匹配 */
-  width: calc(100% - 600px); /* 減去左右側欄總寬度（300px * 2） */
-  margin-left: 300px; /* 貼合左側欄 */
-  margin-right: 300px; /* 貼合右側欄 */
-  padding: 10px;
-  background-color: #e0e0e0;
-  text-align: center;
-  position: fixed; /* 固定不動 */
-  top: 0;
-  z-index: 1; /* 確保在內容之上 */
-  box-sizing: border-box; /* 確保 padding 不影響寬度計算 */
-}
-
-/* 主要內容區域，貼合側欄 */
-.main-content {
-  margin-left: 300px; /* 貼合左側欄寬度 */
-  margin-right: 300px; /* 貼合右側欄寬度 */
-  margin-top: 100px; /* 從橫幅下方開始 */
-  height: calc(100vh - 100px); /* 剩餘高度 */
-  overflow-y: auto; /* 允許貼文區域滑動 */
-  overflow-x: hidden; /* 防止水平溢出 */
-  padding: 20px;
-  box-sizing: border-box;
-  background-color: #ffffff; /* 可視化背景 */
-}
-
+} 
 
 /* 貼文容器 */
 .posts-container {
