@@ -6,16 +6,16 @@ body {
   overflow-x: hidden;
 }
 
-/* 側邊欄樣式（固定位置，調整寬度讓其往中間括） */
+/* 側邊欄樣式（固定位置，增加寬度讓其變寬） */
 .sidebar {
   position: fixed;
   top: 0;
   height: 100vh;
-  width: 150px; /* 原本 200px，減少 50px 讓側邊欄往中間括 */
+  width: 250px; /* 原本 150px，增加 100px 讓側邊欄變寬 */
   padding: 20px;
   background-color: #f0f0f0;
   box-sizing: border-box;
-  transition: width 0.3s; /* 增加過渡效果，方便視覺調整 */
+  transition: width 0.3s; /* 過渡效果 */
 }
 
 /* 左側欄 */
@@ -28,35 +28,36 @@ body {
   right: 0;
 }
 
-/* 主要內容區域，調整邊距與側邊欄匹配 */
+/* 主要內容區域，壓縮邊距讓中間區域變窄 */
 .main-content {
-  margin: 0 150px; /* 與側邊欄寬度一致，減少 50px */
+  margin: 0 250px; /* 與側邊欄寬度一致，原本 150px 增加到 250px */
   overflow-y: hidden;
+  max-width: 600px; /* 新增：限制主內容最大寬度，壓縮中間空間 */
 }
 
-/* 固定資訊/圖片區域，增加高度 */
+/* 固定資訊/圖片區域，進一步增大高度 */
 .info-section {
-  height: 200px; /* 原本 150px，增加 50px 讓區域更大 */
+  height: 250px; /* 原本 200px，增加 50px 讓橫幅區域更大 */
   background-color: #e0e0e0;
   padding: 20px;
   text-align: center;
   position: sticky;
   top: 0;
   z-index: 1;
-  /* 可選：添加背景圖片或自訂內容 */
+  /* 可選：添加背景圖片 */
   /* background-image: url('your-image.jpg'); background-size: cover; */
 }
 
 /* 滑動貼文容器，調整高度與新資訊區域匹配 */
 .posts-container {
-  height: calc(100vh - 200px); /* 與 info-section 新高度匹配 */
+  height: calc(100vh - 250px); /* 與 info-section 新高度匹配 */
   overflow-y: auto;
   padding: 20px;
 }
 
 /* 貼文容器 */
 .container {
-  max-width: 800px;
+  max-width: 100%; /* 改為 100%，讓貼文適應壓縮後的主內容 */
   margin: 0 auto;
 }
 
@@ -117,6 +118,7 @@ body {
   }
   .main-content {
     margin: 0;
+    max-width: 100%; /* 窄螢幕時移除寬度限制 */
   }
   .info-section {
     height: 150px; /* 窄螢幕時回復較小高度 */
