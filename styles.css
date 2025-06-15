@@ -1,8 +1,7 @@
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
 }
 
 .container {
@@ -11,17 +10,16 @@ body {
   padding: 20px;
 }
 
-h1 {
-  text-align: center;
-  color: #333;
-}
-
 .post {
   background: white;
-  border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 20px;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.post-content {
+  margin-bottom: 10px;
 }
 
 .post img {
@@ -31,8 +29,18 @@ h1 {
   margin-top: 10px;
 }
 
-.post-content {
-  margin-bottom: 10px;
+.post-video {
+  margin-top: 10px;
+}
+
+.post-video iframe {
+  max-width: 100%;
+  aspect-ratio: 16 / 9; /* 保持 16:9 比例 */
+}
+
+.post-date {
+  font-size: 0.9em;
+  color: #666;
 }
 
 .giscus {
@@ -40,10 +48,7 @@ h1 {
 }
 
 @media (max-width: 600px) {
-  .container {
-    padding: 10px;
-  }
-  .post {
-    padding: 15px;
-  }
+  .container { padding: 10px; }
+  .post { padding: 10px; }
+  .post-video iframe { height: 200px; }
 }
