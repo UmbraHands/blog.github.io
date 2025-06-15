@@ -7,19 +7,34 @@
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
+  <!-- 固定左側欄 -->
   <div class="sidebar left-sidebar">
     <h2>左側欄</h2>
-    <p>未來可放置網站流量動態</p>
+    <p>固定區域，未來可放置資訊</p>
   </div>
+
+  <!-- 主要內容區域 -->
   <div class="main-content">
-    <header><h1>我的部落格</h1></header>
-    <div class="banner"><p>這裡是橫幅，放置公告或廣告</p></div>
-    <div class="container"><div id="posts"></div></div>
+    <!-- 固定資訊/圖片區域 -->
+    <div class="info-section">
+      <h2>個人資訊/橫幅</h2>
+      <p>這裡可放置公告、圖片或個人資料</p>
+      <!-- 自行添加圖片，例如：<img src="your-image.jpg" alt="描述" style="max-width: 100%;"> -->
+    </div>
+
+    <!-- 滑動貼文容器 -->
+    <div class="posts-container">
+      <div id="posts"></div>
+    </div>
   </div>
+
+  <!-- 固定右側欄 -->
   <div class="sidebar right-sidebar">
     <h2>右側欄</h2>
-    <p>未來可放置網站流量動態</p>
+    <p>固定區域，未來可放置資訊</p>
   </div>
+
+  <!-- giscus 留言系統（需配置） -->
   <script src="https://giscus.app/client.js"
     data-repo="UmbraHands/UmbraHands.github.io"
     data-repo-id="YOUR_REPO_ID"
