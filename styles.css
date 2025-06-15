@@ -1,3 +1,4 @@
+/* 基本樣式 */
 body {
   margin: 0;
   padding: 0;
@@ -5,50 +6,61 @@ body {
   overflow-x: hidden;
 }
 
+/* 側邊欄樣式（固定位置，調整寬度讓其往中間括） */
 .sidebar {
   position: fixed;
   top: 0;
   height: 100vh;
-  width: 200px;
+  width: 150px; /* 原本 200px，減少 50px 讓側邊欄往中間括 */
   padding: 20px;
   background-color: #f0f0f0;
   box-sizing: border-box;
+  transition: width 0.3s; /* 增加過渡效果，方便視覺調整 */
 }
 
+/* 左側欄 */
 .left-sidebar {
   left: 0;
 }
 
+/* 右側欄 */
 .right-sidebar {
   right: 0;
 }
 
+/* 主要內容區域，調整邊距與側邊欄匹配 */
 .main-content {
-  margin: 0 200px;
+  margin: 0 150px; /* 與側邊欄寬度一致，減少 50px */
   overflow-y: hidden;
 }
 
+/* 固定資訊/圖片區域，增加高度 */
 .info-section {
-  height: 150px;
+  height: 200px; /* 原本 150px，增加 50px 讓區域更大 */
   background-color: #e0e0e0;
   padding: 20px;
   text-align: center;
   position: sticky;
   top: 0;
   z-index: 1;
+  /* 可選：添加背景圖片或自訂內容 */
+  /* background-image: url('your-image.jpg'); background-size: cover; */
 }
 
+/* 滑動貼文容器，調整高度與新資訊區域匹配 */
 .posts-container {
-  height: calc(100vh - 150px);
+  height: calc(100vh - 200px); /* 與 info-section 新高度匹配 */
   overflow-y: auto;
   padding: 20px;
 }
 
+/* 貼文容器 */
 .container {
   max-width: 800px;
   margin: 0 auto;
 }
 
+/* 貼文樣式 */
 .post {
   background: white;
   padding: 15px;
@@ -57,10 +69,12 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* 貼文內容 */
 .post-content {
   margin-bottom: 10px;
 }
 
+/* 圖片樣式 */
 .post img {
   max-width: 100%;
   height: auto;
@@ -68,7 +82,7 @@ body {
   margin-top: 10px;
 }
 
-/* 恢復 16:9 居中格局 */
+/* 影片樣式，保持 16:9 居中 */
 .post-video {
   margin-top: 10px;
   position: relative;
@@ -85,15 +99,18 @@ body {
   height: 100%;
 }
 
+/* 日期樣式 */
 .post-date {
   font-size: 0.9em;
   color: #666;
 }
 
+/* 留言系統樣式 */
 .giscus {
   margin-top: 20px;
 }
 
+/* 響應式設計 */
 @media (max-width: 1000px) {
   .sidebar {
     display: none;
@@ -102,15 +119,15 @@ body {
     margin: 0;
   }
   .info-section {
-    height: 100px;
+    height: 150px; /* 窄螢幕時回復較小高度 */
   }
   .posts-container {
-    height: calc(100vh - 100px);
+    height: calc(100vh - 150px);
   }
 }
 
 @media (max-width: 600px) {
   .posts-container { padding: 10px; }
   .post { padding: 10px; }
-  .post-video { padding-bottom: 75%; } /* 手機端調整比例 */
+  .post-video { padding-bottom: 75%; }
 }
