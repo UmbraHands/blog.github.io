@@ -57,7 +57,7 @@ body {
 
 /* 貼文容器 */
 .posts-container {
-  margin-top: 0; /* 移除多餘的 margin-top，因為已在 .main-content 中設置 */
+  margin-top: 0; /* 移除多餘的 margin-top */
   height: 100%; /* 填滿 .main-content 高度 */
   width: 100%; /* 填滿主內容寬度 */
   padding: 20px;
