@@ -4,14 +4,14 @@ const postsData = [
     id: 2,
     content: "這是我的第二篇文章！包含一首歌：",
     image: "https://via.placeholder.com/600x300",
-    youtube: "dQw4w9WgXcQ", // YouTube 影片 ID
+    youtube: "dQw4w9WgXcQ",
     date: "2025-06-15"
   },
   {
     id: 1,
     content: "這是我的第一篇文章，歡迎留言！",
     image: "https://via.placeholder.com/600x300",
-    youtube: "n1b9V5vQ8lQ", // 另一個 YouTube 影片 ID
+    youtube: "n1b9V5vQ8lQ",
     date: "2025-06-14"
   }
 ];
@@ -40,13 +40,12 @@ function renderPosts() {
   });
 }
 
-// 取得訪客 IP 並顯示為留言匿名名稱（使用 ipify API）
+// 取得訪客 IP 並顯示為留言匿名名稱
 async function setAnonymousName() {
   try {
     const response = await fetch('https://api.ipify.org?format=json');
     const data = await response.json();
-    // 這裡假設 Giscus 支援自訂顯示名稱，實際需前端處理
-    console.log(`訪客 IP: ${data.ip}`); // 可進一步自訂顯示
+    console.log(`訪客 IP: ${data.ip}`);
   } catch (error) {
     console.error('無法取得 IP:', error);
   }
